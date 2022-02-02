@@ -1,8 +1,8 @@
 title: The Numerical Schemer
-author: Chrsitian Himpe
+author: Christian Himpe
 email: 
 description: > # this means to ignore newlines until "baseurl:"
-  Numericas with Scheme
+  Numerics with Scheme
 theme: minima
 
 # social links
