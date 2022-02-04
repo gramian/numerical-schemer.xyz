@@ -4,7 +4,7 @@ email:
 description: > # this means to ignore newlines until "baseurl:"
   Numerics with Scheme
 theme: minima
-minimal:
+minima:
   skin: dark
 
 # social links
