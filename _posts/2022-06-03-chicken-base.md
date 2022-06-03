@@ -12,12 +12,12 @@ For the full reference, see the [Module (chicken base)](http://wiki.call-cc.org/
 
 ### Numeric predicates
 
-First, the additional predicates for numeric types are important, i.e.:
+First, the predicates for numeric types are an important addition, i.e.:
 
 * `(fixnum? x)` - Is argument a fixed-size integer?
 * `(flonum? x)` - Is argument an inexact floating-point number?
 
-to guard functions using specific fixnum or flonum functionality against generic numbers.
+And can be used to guard functions using specific fixnum or flonum functionality against generic numbers.
 
 ### Little Schemer
 
@@ -57,7 +57,7 @@ a function to conditionally halt:
 
 I mostly, if not exclusively, use `assert` to test function arguments for validity.
 
-### Reducucers
+### Reducers
 
 While R5RS provides a `map` function, a "fold" function is not part of the standard,
 Therefore these reducers are included:
@@ -65,14 +65,14 @@ Therefore these reducers are included:
 * `(foldl fun ini lst)` - Apply binary function argument pair-wise to argument initialized accumulator and elements of list argument head to tail.
 * `(foldr fun ini lst)` - Apply binary function argument pair-wise to argument initialized accumulator and elements of list argument tail to head.
 
-### Vectors
+### Vector Utility
 
 Extracting a part of an array is a typical task which could be solved by recursion as for lists,
 but for indexable (memory continguous) types like arrays (vectors) a block extraction can be more natural:
 
 * `(subvector vec from to)` - Return vector holding elements of argument vector in given index range.
 
-### Abstract
+### Abstract Functions
 
 The following functions are simple: 
 
@@ -82,7 +82,7 @@ The following functions are simple:
 
 However, importing these tools from an official module prevents one from rewriting it over and over, and establishes a name for them.
 
-### One-Armed 
+### One-Armed Conditional
 
 In Scheme it is legal to use an `if` only with consequent and without alternative,
 a so-called one-armed-if. But what is returned if the one-armed-if's predicate
@@ -101,7 +101,7 @@ More convenient is directly matching signature patterns, here via [SRFI-16](http
 
 * `(case-lambda ((arg ...) body ...) ((arg ...) body ...))`
 
-### Substitution
+### Substitutions
 
 Scheme has a powerful macro system, but sometimes, not least for readability,
 a middle ground between function and macro, or binding and literal is needed:
