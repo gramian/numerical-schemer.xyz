@@ -38,5 +38,5 @@ In summary, following is the module hierarchy:
 Furthermore, a basic test library is defined in `tests/check.scm`,
 while the per module tests are set up in `tests/test-MODULENAME.scm`,
 with `MODULENAME` either `utils`, `fpmath`, `f64vector`, or `matrico`,
-and called from `tests/run.scm`.
+and called from `tests/run.scm`. 
 
