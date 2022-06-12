@@ -8,6 +8,7 @@ tags: Scheme matrico
 
 This is the base module of the `matrico` project and imported by every other module.
 It contains a collection of miscellaneous bindings, macros and functions for general use.
+You can take a look at the `src/utils.scm` source file [here](https://github.com/gramian/matrico/blob/main/src/utils.scm).
 
 ### Meta Helpers
 Scheme's macro system is insanely powerful.
