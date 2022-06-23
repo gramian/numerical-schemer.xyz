@@ -9,13 +9,13 @@ tags: Scheme matrico
 This is another short guided tour, this time through the functions of the CHICKEN Scheme `flonum` module.
 The purpose of this module is, similar to the [`fixnum` module](http://wiki.call-cc.org/man/5/Module%20(chicken%20fixnum)), to provide typed operations for floating-point numbers for improved performance.
 Additionally, in my opinion, using these functions increases readability, as the use of these functions underscores (and enforces) the type of their arguments.
-For the full reference, see the [Module (chicken flonum)](http://wiki.call-cc.org/man/5/Module%20(chicken%20flonum))
+For the full reference, see the [module (chicken flonum)](http://wiki.call-cc.org/man/5/Module%20(chicken%20flonum)).
 
 ### Arithmetic Operations
 Essentially, this module provides specialized functions for all mathematical functions defined in R5RS,
 yet, with notable exceptions:
 The elementary arithmetic operations only and only accept two arguments.
-On the one hand, this means neither unary variants are available.
+On the one hand, this means unary variants are not available.
 So, the subtraction function `(fp- x y)` cannot be used to negate and the division function `(fp/ x y)` cannot be used to invert with only one argument.
 Of course, one could curry the respective neutral element to these functions as first argument (`(fp- 0.0 y)` and `(fp/ 1.0 y)`),
 and for negation the function `fpneg` is supplied.
@@ -51,10 +51,11 @@ and [inverse hyperbolic functions](https://en.wikipedia.org/wiki/Inverse_hyperbo
 * area hyperbolic tangent / inverse hyperbolic tangent (`atanh`),
 
 are not included in this module.
-While these functions are not part of the R5RS (which I think is a severe shortcoming),
+While these functions are not part of R5RS (which I think is a shortcoming),
 they are defined in the `C` [math library](https://cplusplus.com/reference/cmath/),
 and even though there are closed forms for these functions, their (flonum-)accurate implementation,
-is not necessarily that simple.
+is not necessarily that simple
+(unless exponential and natural logarithm `fpexp` and `fplog` switch to appropriate underlying `C` functions based on their arguments).
 
 ### Print Precision
 Lastly, the `(flonum-print-precision num)` function controls how flonums are printed to the terminal or a sequential file.
