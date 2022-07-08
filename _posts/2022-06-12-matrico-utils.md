@@ -70,11 +70,15 @@ As integers are so fundamental for programming, I let the `utils` module
 ### List Functions
 Rarely, one needs to extract a part of list between two indices, similar to
 the non-standard but prevalent `subvector` for vectors. 
+Furthermore, heuristically it turned out using folding via (`foldr`) instead of
+`append` to append an element to a list is more memory efficient, thus a
+fold-based append variant is supplied.
 
 Unlike in [SRFI-1](https://srfi.schemers.org/srfi-1/srfi-1.html), my `any?` and
 `all?` ("all" instead of "every") functions return boolean values, and thus have
 question marks signifying a predicate. These leads to:
 
+* `(append* lst any)` - Returns argument list appended with element argument.
 * `(sublist lst start end)` - Returns list partition of list argument inbetween the index arguments.
 * `(any? pred lst)` - Returns true if any element of list argument applied to function argument is true, false otherwise.
 * `(all? pred lst)` - Returns true if all elements of list argument applied to function argument are true, false otherwise.
