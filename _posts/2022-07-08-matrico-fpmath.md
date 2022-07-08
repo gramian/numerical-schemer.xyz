@@ -169,7 +169,7 @@ becomes printable. This tapered flonum to string conversion is implemented by:
 
 * `(fptaper x)` returns 8-character string approximately describing flonum argument.
 
-Practically this means the integer and fractional parts can occupy maximally `5`
+Practically this means the integer and fractional parts can occupy maximally `6`
 characters, as one character is reserved for the sign and another for the
 decimal point. So the smallest fully printable number is `±0.00001`, where as the
 largest is `±99999.9`. Any smaller number is partially printed as `±0.000…` and
