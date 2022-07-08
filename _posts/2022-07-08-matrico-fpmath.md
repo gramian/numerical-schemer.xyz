@@ -93,10 +93,10 @@ numerators, denominators, and number of correct decimal digits, such that a
 rational approximation with accuracy matching flonums can be selected, and
 tested (verified) against the closed forms mentioned above:
 
-* `(fptau)` returns `(fp% 491701844 78256779)`, see: https://oeis.org/A002485 , https://oeis.org/A002486 , and https://oeis.org/A114526 (17th entry, for 17 correct digits).
+* `(fptau)` returns `(fp% 491701844 78256779)`, see: [https://oeis.org/A002485](A002485) , [https://oeis.org/A002486](A002486) , and [https://oeis.org/A114526](A114526) (17th entry, for 17 correct digits).
   Note, that I have pre-multiplied the numerator with `2`, but this is a precise integer operation.
-* `(fpeul)` returns `(fp% 410105312 150869313)`, see: https://oeis.org/A007676 , https://oeis.org/A007677 , and https://oeis.org/A114539 (21st entry, for 16 correct digits).
-* `(fpphi)` returns `(fp% 165580141 102334155)`, see: https://oeis.org/A000045 , computed via [consecutive quotients of Fibonacci numbers](https://en.wikipedia.org/wiki/Fibonacci_number#Limit_of_consecutive_quotients) (41st, and 40th entries for 16 correct digits).
+* `(fpeul)` returns `(fp% 410105312 150869313)`, see: [https://oeis.org/A007676](A007676) , [https://oeis.org/A007677](A007677) , and [https://oeis.org/A114539](A114539) (21st entry, for 16 correct digits).
+* `(fpphi)` returns `(fp% 165580141 102334155)`, see: [https://oeis.org/A000045](A000045) , computed via [consecutive quotients of Fibonacci numbers](https://en.wikipedia.org/wiki/Fibonacci_number#Limit_of_consecutive_quotients) (41st, and 40th entries for 16 correct digits).
 
 I have not seen use of rational approximations in the context of approximate 
 floating-point constants in numerics before, so maybe somebody has some pointers
@@ -174,8 +174,8 @@ characters, as one character is reserved for the sign and another for the
 decimal point. So the smallest fully printable number is `±0.00001`, where as the
 largest is `±99999.9`. Any smaller number is partially printed as `±0.000…` and
 larger numbers are printed as `±100000.` or `±100000…` respectively. To highlight
-an exact zero, it is printed as `    0   `. Special values are printed as:
-`   ±∞   ` and `   NaN  `.
+an exact zero, it is printed as `____0___`. Special values are printed as:
+`___±∞___` and `___NaN__`.
 
 However, as this function is supposed only for internal use, it is excluded from
 reexport in `matrico`.
