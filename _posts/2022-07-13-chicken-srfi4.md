@@ -1,5 +1,5 @@
 ---
-title: "CHICKEN SRFI-4 Module"
+title: "CHICKEN srfi-4 Module"
 date: 2022-07-13
 tags: Scheme matrico
 ---
