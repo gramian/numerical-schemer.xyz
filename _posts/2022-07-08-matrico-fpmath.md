@@ -16,6 +16,7 @@ As the `fpmath` module is not very useful without the imported
 `(chicken flonum)` module, it is reexported. And as the `fpmath` module is
 also practically useful for high-level use in the overarching `matrico` module,
 `matrico` in turn reexports `fpmath`.
+You can take a look at the `src/fpmath.scm` source file [here](https://github.com/gramian/matrico/blob/main/src/fpmath.scm).
 
 ### Converters
 To bridge between the exact fixnum numbers and the inexact flonum numbers,
