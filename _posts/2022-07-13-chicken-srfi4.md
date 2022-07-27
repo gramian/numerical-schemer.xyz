@@ -1,7 +1,7 @@
 ---
 title: "CHICKEN srfi-4 Module"
 date: 2022-07-13
-tags: Scheme matrico
+tags: Lisp Scheme SchemeLang ChickenScheme Chicken-Module
 ---
 
 ## CHICKEN Scheme's included `srfi-4` module

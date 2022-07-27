@@ -1,7 +1,7 @@
 ---
 title: "CHICKEN base Module"
 date: 2022-06-03
-tags: Scheme matrico
+tags: Lisp Scheme SchemeLang ChickenScheme Chicken-Module
 ---
 
 ## CHICKEN Scheme's included `base` module

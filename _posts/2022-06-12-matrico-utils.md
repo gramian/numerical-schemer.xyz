@@ -1,7 +1,7 @@
 ---
 title: "Matrico utils Module"
 date: 2022-06-12
-tags: Scheme matrico
+tags: Lisp Scheme SchemeLang matrico matrico-Module
 ---
 
 ## `matrico`'s Utilities Module `utils`

@@ -1,7 +1,7 @@
 ---
 title: "CHICKEN flonum Module"
 date: 2022-06-23
-tags: Scheme matrico
+tags: Lisp Scheme SchemeLang ChickenScheme Chicken-Module
 ---
 
 ## CHICKEN Scheme's included `flonum` module

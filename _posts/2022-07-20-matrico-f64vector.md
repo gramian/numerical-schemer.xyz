@@ -1,7 +1,7 @@
 ---
 title: "Matrico f64vector Module"
 date: 2022-07-20
-tags: Scheme matrico
+tags: Lisp Scheme SchemeLang matrico matrico-Module
 ---
 
 ## `matrico`'s Double-Precision Flonum Vector `f64vector` Module

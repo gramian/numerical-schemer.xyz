@@ -1,7 +1,7 @@
 ---
 title: "Matrico fpmath Module"
 date: 2022-07-08
-tags: Scheme matrico
+tags: Lisp Scheme SchemeLang matrico matrico-Module
 ---
 
 ## `matrico`'s Floating-Point Addon-Module `fpmath`

@@ -1,7 +1,7 @@
 ---
 title: "The matrico blueprint"
 date: 2022-05-23
-tags: Scheme matrico
+tags: Lisp Scheme SchemeLang matrico
 ---
 
 ## How is the `matrico` source code organized?
