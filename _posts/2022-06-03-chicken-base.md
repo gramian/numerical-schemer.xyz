@@ -129,7 +129,6 @@ An alternative is including a source file (without evaluation), and evaluate whe
 
 One cannot overstate the utility of the relative file path variant for code organization.
 
-
 As one can see, the contents of the `base` module are largely simple convenience function,
 but significantly decrease boilerplate and increase readability.
 This included module makes CHICKEN Scheme practically very useful.

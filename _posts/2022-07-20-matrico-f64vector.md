@@ -77,9 +77,9 @@ a specialized third reducer is included - the [dot product](https://en.wikipedia
 While the dot product is a prime example of a "map" (`fp*`) and a "fold" (`fp+`) operation,
 again performance dictates to specialize this function.
 
-* `(f64vector-fold fun ini . vec)` 
-* `(f64vector-fold* fun ini . vec)` 
-* `(f64vector-dot x y)`
+* `(f64vector-fold fun ini . vec)` - Return accumulator of applying function argument to accumulator (starting with initializer argument) and vector arguments' entries from front to back.
+* `(f64vector-fold* fun ini . vec)` - Return accumulator of applying function argument to accumulator (starting with initializer argument) and vector arguments' entries from back to front.
+* `(f64vector-dot x y)` - Return flonum resulting from dot product of same dimension vector arguments.
 
 In principles the predicates and mappers could have been implemented as special cases of the reducers,
 which, while elegant, is not achieving best performance.

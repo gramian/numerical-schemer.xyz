@@ -35,6 +35,10 @@ In summary, following is the module hierarchy:
 * `fpmath` module (depends `utils`)
 * `utils` module
 
+This means a user will only see functions prefixed with `matrico` or `mx`, and
+hence, only these functions will do argument checks. All lower level functions
+will assume suitable arguments.
+
 Furthermore, a basic test library is defined in `tests/check.scm`,
 while the per module tests are set up in `tests/test-MODULENAME.scm`,
 with `MODULENAME` either `utils`, `fpmath`, `f64vector`, or `matrico`,

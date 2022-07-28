@@ -124,6 +124,9 @@ calculator functionality (in their naming), based on the [logarithm rules](https
 * `(fplg x)` returns decimal logarithm (base 10) of flonum argument.
 * `(fplogb b x)` returns logarithm to **positive** flonum base argument of flonum argument.
 
+Note, that the utilized values `ln(2)` (`(fplog 2.0)`) and `ln(10)` (`(fplog 10.0)`) are neither
+hard-coded as constants nor computed during a function call to `fplb` or `fplg`, but pre-computed once on load of the module. 
+
 ### Hyperbolic Functions and Inverse Hyperbolic Functions
 As I stated in an [earlier post](http://numerical-schemer.xyz/2022/06/23/chicken-flonum.html),
 a shortcoming of R5RS and also `(chicken flonum)` is the absence of hyperbolic

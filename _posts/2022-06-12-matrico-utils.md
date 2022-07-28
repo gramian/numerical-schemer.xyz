@@ -64,12 +64,13 @@ increment and decrement as well as predicates comparing to zero:
 * `(fx<=0? x)` - Returns true if fixnum argument is less or equal to zero, false otherwise.
 * `(fx>=0? x)` - Returns true if fixnum argument is greater or equal to zero, false otherwise.
 
-As integers are so fundamental for programming, I let the `utils` module
-`reexport` the `(chicken fixnum)` module.
+As integers are so fundamental for programming and it is hard to imagine using the above
+fixnum helpers without other fixnum functions, I let the `utils` module `reexport` the `(chicken fixnum)` module.
 
 ### List Functions
 Rarely, one needs to extract a part of list between two indices, similar to
-the non-standard but prevalent `subvector` for vectors. 
+the non-standard but prevalent `subvector` for vectors. However, there is a specific
+use for this un-schemy function (due to the indexing of a list).
 Furthermore, heuristically it turned out using folding via (`foldr`) instead of
 `append` to append an element to a list is more memory efficient, thus a
 fold-based append variant is supplied.

@@ -36,7 +36,7 @@ Lastly, a converter from lists to `f64vector`s is available (again, as for the s
 and also the non-R5RS counterpart to `subvector` (from [`(chicken base)`](http://numerical-schemer.xyz/2022/06/03/chicken-base.html)):
 
 * `(list->f64vector lst)` - Return `f64vector` from list of flonums.
-* `(subf64vector vec from to) ` - Return `f64vector` holding entries of first index argument till second index argument.
+* `(subf64vector vec from to)` - Return `f64vector` holding entries of first index argument till second index argument.
 
 Overall, this is a very natural addition of homogenous vectors to the standard
 vectors, even regarding extended functionality in CHICKEN.
