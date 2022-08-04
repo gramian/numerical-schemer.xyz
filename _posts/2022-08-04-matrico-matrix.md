@@ -4,7 +4,7 @@ date: 2022-08-04
 tags: Lisp Scheme SchemeLang matrico matrico-Module
 ---
 
-## `matrico`'s `matrix` Functor Module
+## `matrico`'s Matrix Functor Module `matrix`
 
 The matrix [functor](http://numerical-schemer.xyz/2022/07/27/chicken-module.html#functors)
 is the abstract definition of `matrico`'s core matrix type,
