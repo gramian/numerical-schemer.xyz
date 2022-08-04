@@ -21,19 +21,19 @@ First, a procedural generation of vectors needs to be available,
 to avoid the user having to do such operations via a mutation and consequentially
 also avoid an unnecessary zero initialization of the vector.
 
-* `(f64vector-unfold dim fun)` - Return `f64vector` with dimension-argument-many elements resulting from applying function argument to respective elements' indices.
+* `(f64vector-unfold dim fun)` - Returns `f64vector` with dimension-argument-many elements resulting from applying function argument to respective elements' indices.
 
 Another constructor of sorts is the concatenation of two or more vectors:
 
-* `(f64vector-concat . vecs)` - Return `f64vector` holding all argument list-of-vectors elements concatenated vector-by-vector.
+* `(f64vector-concat . vecs)` - Returns `f64vector` holding all argument list-of-vectors elements concatenated vector-by-vector.
 
 ### Predicates
 Next, a generalization of predicates for vectors, similar to `any` and `every` of [SRFI-1](https://srfi.schemers.org/srfi-1/srfi-1.html) is provided.
 These functions return true or false and are thus marked with a question-mark.
 Naming-wise, I prefer Matlab's [`all`](https://www.mathworks.com/help/matlab/ref/all.html) to Scheme's `every`:
 
-* `(f64vector-any? pred vec)` - Return true if any element of argument `f64vector` fulfills predicate argument.
-* `(f64vector-all? pred vec)` - Return true if all elements of argument `f64vector` fulfill predicate argument.
+* `(f64vector-any? pred vec)` - Returns true if any element of argument `f64vector` fulfills predicate argument.
+* `(f64vector-all? pred vec)` - Returns true if all elements of argument `f64vector` fulfill predicate argument.
 
 Testing elements of a vector on a predicate and returning matching elements and/or indices is not covered by these functions,
 and may be added later on as a `f64vector-find` function.
@@ -56,12 +56,12 @@ but always iterates in order through the container.
 Here, I implemented `f64vector` versions of `for-each` and `for-each-index`,
 whose practical use lies in my case only in side-effect operations, like printing to terminal or writing to file.
 
-* `(f64vector-map fun vec)` - Return `f64vector` of elements of function argument applied to `f64vector` argument's elements.
-* `(f64vector-map fun vec wec)` - Return `f64vector` of elements of function argument applied to `f64vector` arguments' elements.
-* `(f64vector-map fun . vecs)` - Return `f64vector` of elements of function argument applied to `f64vector` arguments' elements.
-* `(f64vector-map-index fun . vec)` - Return `f64vector` of elements of function argument applied to `f64vector` arguments' elements and their index.
-* `(f64vector-foreach fun . vec)` - Return `void`, apply function argument applied to `f64vector` arguments' elements in-order.
-* `(f64vector-foreach-index fun . vec)` - Return `void`, apply function argument applied to `f64vector` arguments' elements in-order and their index.
+* `(f64vector-map fun vec)` - Returns `f64vector` of elements of function argument applied to `f64vector` argument's elements.
+* `(f64vector-map fun vec wec)` - Returns `f64vector` of elements of function argument applied to `f64vector` arguments' elements.
+* `(f64vector-map fun . vecs)` - Returns `f64vector` of elements of function argument applied to `f64vector` arguments' elements.
+* `(f64vector-map-index fun . vec)` - Returns `f64vector` of elements of function argument applied to `f64vector` arguments' elements and their index.
+* `(f64vector-foreach fun . vec)` - Returns `void`, apply function argument applied to `f64vector` arguments' elements in-order.
+* `(f64vector-foreach-index fun . vec)` - Returns `void`, apply function argument applied to `f64vector` arguments' elements in-order and their index.
 
 ### Reducers
 Finally, and of vital importance, the folders (or reducers) are defined.
@@ -77,9 +77,9 @@ a specialized third reducer is included - the [dot product](https://en.wikipedia
 While the dot product is a prime example of a "map" (`fp*`) and a "fold" (`fp+`) operation,
 again performance dictates to specialize this function.
 
-* `(f64vector-fold fun ini . vec)` - Return accumulator of applying function argument to accumulator (starting with initializer argument) and vector arguments' entries from front to back.
-* `(f64vector-fold* fun ini . vec)` - Return accumulator of applying function argument to accumulator (starting with initializer argument) and vector arguments' entries from back to front.
-* `(f64vector-dot x y)` - Return flonum resulting from dot product of same dimension vector arguments.
+* `(f64vector-fold fun ini . vec)` - Returns accumulator of applying function argument to accumulator (starting with initializer argument) and vector arguments' entries from front to back.
+* `(f64vector-fold* fun ini . vec)` - Returns accumulator of applying function argument to accumulator (starting with initializer argument) and vector arguments' entries from back to front.
+* `(f64vector-dot x y)` - Returns flonum resulting from dot product of same dimension vector arguments.
 
 In principles the predicates and mappers could have been implemented as special cases of the reducers,
 which, while elegant, is not achieving best performance.

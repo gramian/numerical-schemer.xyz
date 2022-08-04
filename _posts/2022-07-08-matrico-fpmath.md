@@ -26,8 +26,8 @@ Another very useful converter is, given two fixnums representing numerator and
 denominator, a conversion to a flonum from such rational components, which is
 used below for constant provisioning.
 
-* `(fp n)` alias for `exact->inexact`, returns inexact flonum from exact fixnum argument.
-* `(fp% n d)` returns flonum from numerator fixnum and denominator fixnum arguments.
+* `(fp n)` - Alias for `exact->inexact`, returns inexact flonum from exact fixnum argument.
+* `(fp% n d)` - Returns flonum from numerator fixnum and denominator fixnum arguments.
 
 ### Predicates
 A tricky issue is comparing flonums for equality, due to their inexactness.
@@ -36,8 +36,8 @@ example via the difference of two flonums. To handle this, two functions are
 implemented, one to compare against exact zero, which is emphasized by two
 question-mark predicate indicators, and one to compare against a tolerance:
 
-* `(fpzero?? x)` returns true for zero, else false.
-* `(fpzero? x tol)` returns true if first argument is less than second argument, else false.
+* `(fpzero?? x)` - Returns true for zero, else false.
+* `(fpzero? x tol)` - Returns true if first argument is less than second argument, else false.
 
 ### Operators
 The `(chicken flonum)` module only provides one unary elementary arithmetic
@@ -59,10 +59,10 @@ This operation is important enough to be provided in the [`C` library](https://c
 and also in the flonum modules of various Schemes such as [Gauche](https://practical-scheme.net/gauche/man/gauche-refe/R7RS-large.html#index-fl_002b_002a)
 and [MIT Scheme](https://www.gnu.org/software/mit-scheme/documentation/stable/mit-scheme-ref.html#Flonum-Operations).
 
-* `(fp*2 x)` returns the double of the flonum argument.
-* `(fp^2 x)` returns the square of the flonum argument.
-* `(fprec x)` returns the reciprocal of the flonum argument.
-* `(fp*+ x y z)` returns the fused multiply-add of the flonum arguments.
+* `(fp*2 x)` - Returns the double of the flonum argument.
+* `(fp^2 x)` - Returns the square of the flonum argument.
+* `(fprec x)` - Returns the reciprocal of the flonum argument.
+* `(fp*+ x y z)` - Returns the fused multiply-add of the flonum arguments.
 
 In future versions of CHICKEN Scheme (maybe version 5.4), `(chicken flonum)`
 will include the `fp*+` function, hence it is wrapped in a CHICKEN version
@@ -94,10 +94,10 @@ numerators, denominators, and number of correct decimal digits, such that a
 rational approximation with accuracy matching flonums can be selected, and
 tested (verified) against the closed forms mentioned above:
 
-* `(fptau)` returns `(fp% 491701844 78256779)`, see: [https://oeis.org/A002485](A002485) , [https://oeis.org/A002486](A002486) , and [https://oeis.org/A114526](A114526) (17th entry, for 17 correct digits).
+* `(fptau)` - Returns `(fp% 491701844 78256779)`, see: [https://oeis.org/A002485](A002485) , [https://oeis.org/A002486](A002486) , and [https://oeis.org/A114526](A114526) (17th entry, for 17 correct digits).
   Note, that I have pre-multiplied the numerator with `2`, but this is a precise integer operation.
-* `(fpeul)` returns `(fp% 410105312 150869313)`, see: [https://oeis.org/A007676](A007676) , [https://oeis.org/A007677](A007677) , and [https://oeis.org/A114539](A114539) (21st entry, for 16 correct digits).
-* `(fpphi)` returns `(fp% 165580141 102334155)`, see: [https://oeis.org/A000045](A000045) , computed via [consecutive quotients of Fibonacci numbers](https://en.wikipedia.org/wiki/Fibonacci_number#Limit_of_consecutive_quotients) (41st, and 40th entries for 16 correct digits).
+* `(fpeul)` - Returns `(fp% 410105312 150869313)`, see: [https://oeis.org/A007676](A007676) , [https://oeis.org/A007677](A007677) , and [https://oeis.org/A114539](A114539) (21st entry, for 16 correct digits).
+* `(fpphi)` - Returns `(fp% 165580141 102334155)`, see: [https://oeis.org/A000045](A000045) , computed via [consecutive quotients of Fibonacci numbers](https://en.wikipedia.org/wiki/Fibonacci_number#Limit_of_consecutive_quotients) (41st, and 40th entries for 16 correct digits).
 
 I have not seen use of rational approximations in the context of approximate 
 floating-point constants in numerics before, so maybe somebody has some pointers
@@ -110,19 +110,19 @@ further "generalized functions" (in simple terms, these mathematical mappings
 are generalized because they require conditionals, due to their piecewise
 defintion) I consider useful:
 
-* `(fpdelta x)` returns zero except for argument zero it returns one, see [Delta](https://en.wikipedia.org/wiki/Kronecker_delta#Alternative_notation).
-* `(fpheaviside x)` returns one for positive arguments zero otherwise, see [Heaviside](https://en.wikipedia.org/wiki/Heaviside_step_function).
-* `(fpsign x)` returns minus one for negative, one for positive, and zero for zero arguments, see [Sign](https://en.wikipedia.org/wiki/Sign_function).
+* `(fpdelta x)` - Returns zero except for argument zero it returns one, see [Delta](https://en.wikipedia.org/wiki/Kronecker_delta#Alternative_notation).
+* `(fpheaviside x)` - Returns one for positive arguments zero otherwise, see [Heaviside](https://en.wikipedia.org/wiki/Heaviside_step_function).
+* `(fpsign x)` - Returns minus one for negative, one for positive, and zero for zero arguments, see [Sign](https://en.wikipedia.org/wiki/Sign_function).
 
 ### Logarithms
 The `(chicken flonum)` module only provides a natural logarithm `fplog`, which
 is the minimal necessary, but not too comfortable. So I am adding typical
 calculator functionality (in their naming), based on the [logarithm rules](https://en.wikipedia.org/wiki/Logarithm#Change_of_base):
 
-* `(fpln x)` alias for `fplog`, returns natural logarothm of flonum argument.
-* `(fplb x)` returns binary logarithm (base 2) of flonum argument.
-* `(fplg x)` returns decimal logarithm (base 10) of flonum argument.
-* `(fplogb b x)` returns logarithm to **positive** flonum base argument of flonum argument.
+* `(fpln x)` - Alias for `fplog`, returns natural logarothm of flonum argument.
+* `(fplb x)` - Returns binary logarithm (base 2) of flonum argument.
+* `(fplg x)` - Returns decimal logarithm (base 10) of flonum argument.
+* `(fplogb b x)` - Returns logarithm to **positive** flonum base argument of flonum argument.
 
 Note, that the utilized values `ln(2)` (`(fplog 2.0)`) and `ln(10)` (`(fplog 10.0)`) are neither
 hard-coded as constants nor computed during a function call to `fplb` or `fplg`, but pre-computed once on load of the module. 
@@ -134,12 +134,12 @@ functions and inverse hyperbolic functions. So, these are provided in this addon
 module via the [exponential definitions](https://en.wikipedia.org/wiki/Hyperbolic_functions#Exponential_definitions) of the hyperbolic functions and the
 [logarithmic definitions](https://en.wikipedia.org/wiki/Inverse_hyperbolic_functions#Definitions_in_terms_of_logarithms) of the inverse hyperbolic functions:
 
-* `(fpsinh x)` returns hyperbolic sine for flonum argument.
-* `(fpcosh x)` returns hyperbolic cosine for flonum argument.
-* `(fptanh x)` returns hyperbolic tangent for flonum argument.
-* `(fpasinh x)` returns area hyperbolic sine (inverse hyperbolic sine) for flonum argument.
-* `(fpacosh x)` returns area hyperbolic cosine (inverse hyperbolic cosine) for flonum argument.
-* `(fpatanh x)` returns area hyperbolic tangent (inverse hyperbolic tangent) flor flonum argument.
+* `(fpsinh x)` - Returns hyperbolic sine for flonum argument.
+* `(fpcosh x)` - Returns hyperbolic cosine for flonum argument.
+* `(fptanh x)` - Returns hyperbolic tangent for flonum argument.
+* `(fpasinh x)` - Returns area hyperbolic sine (inverse hyperbolic sine) for flonum argument.
+* `(fpacosh x)` - Returns area hyperbolic cosine (inverse hyperbolic cosine) for flonum argument.
+* `(fpatanh x)` - Returns area hyperbolic tangent (inverse hyperbolic tangent) flor flonum argument.
 
 ### Haversed Trigonometric Functions
 A lesser used variant of the trigonometric functions are the [haversed sine
@@ -147,17 +147,28 @@ A lesser used variant of the trigonometric functions are the [haversed sine
 and shifted sine and cosine are sometimes useful in systems and control theory,
 my field of mathematical research.
 
-* `(fphsin x)` returns haversine for flonum argument.
-* `(fphcos x)` returns havercosine for flonum argument.
+* `(fphsin x)` - Returns haversine for flonum argument.
+* `(fphcos x)` - Returns havercosine for flonum argument.
+
+### Logarithmic Hyperbolic Functions
+Another pair of lesser known functions are logarithmic hyperbolic functions,
+which are implemented in the [GNU Scientific Library](https://www.gnu.org/software/gsl/doc/html/specfunc.html#hyperbolic-trigonometric-functions).
+While log-sinh is a differentiable function over the positive real numbers
+that behaves like a logarithm for small (positive) values and like a linear function for large (positive) values,
+the log-cosh is a differentiable function over all real numbers,
+that behaves like a quadratic function for small values and like the absolute value for large values.
+
+* `(fplnsinh x)` - Returns log-sinh for flonum argument.
+* `(fplncosh x)` - Returns log-cosh for flonum argument.
 
 ### Special Functions
 Some useful extra functions are implemented:
 
-* `(fpsignsqrt x)` returns the square root of the absolute value of the flonum argument times the sign of the argument.
-* `(fpsinc x)` returns the (unnormalized) [cardinale sine](https://en.wikipedia.org/wiki/Sinc_function) of the flonum argument.
-* `(fpsigm x)` returns the [sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function) (standard logistic function) of the flonum argument.
-* `(fpgauss x)` returns the standard [Gauss function](https://en.wikipedia.org/wiki/Stirling%27s_approximation) (zero expectation, unit deviation) of the flonum argument.
-* `(fpstirling x)` returns the [Stirling's approximation](https://en.wikipedia.org/wiki/Stirling%27s_approximation) for factorials of the flonum argument.
+* `(fpsignsqrt x)` - Returns the square root of the absolute value of the flonum argument times the sign of the argument.
+* `(fpsinc x)` - Returns the (unnormalized) [cardinale sine](https://en.wikipedia.org/wiki/Sinc_function) of the flonum argument.
+* `(fpsigm x)` - Returns the [sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function) (standard logistic function) of the flonum argument.
+* `(fpgauss x)` - Returns the standard [Gauss function](https://en.wikipedia.org/wiki/Stirling%27s_approximation) (zero expectation, unit deviation) of the flonum argument.
+* `(fpstirling x)` - Returns the [Stirling's approximation](https://en.wikipedia.org/wiki/Stirling%27s_approximation) for factorials of the flonum argument.
 
 Note, that `fpsinc` can be normalized by scaling its argument,
 `fpsigm` and `fpgauss` can be generalized by shifting and scaling its argument and also scaling its result,
@@ -171,7 +182,7 @@ terminal window that only a matrix with 4 columns could be printed without
 additional breaks. Now, with a maximum width of `8` already a 9-column matrix
 becomes printable. This tapered flonum to string conversion is implemented by:
 
-* `(fptaper x)` returns 8-character string approximately describing flonum argument.
+* `(fptaper x)` - Returns 8-character string approximately describing flonum argument.
 
 Practically this means the integer and fractional parts can occupy maximally `6`
 characters, as one character is reserved for the sign and another for the

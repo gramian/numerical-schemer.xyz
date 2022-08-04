@@ -37,7 +37,7 @@ In summary, following is the module hierarchy:
 
 This means a user will only see functions prefixed with `matrico` or `mx`, and
 hence, only these functions will do argument checks. All lower level functions
-will assume suitable arguments.
+will assume admissible arguments.
 
 Furthermore, a basic test library is defined in `tests/check.scm`,
 while the per module tests are set up in `tests/test-MODULENAME.scm`,

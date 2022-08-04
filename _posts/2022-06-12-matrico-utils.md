@@ -70,7 +70,7 @@ fixnum helpers without other fixnum functions, I let the `utils` module `reexpor
 ### List Functions
 Rarely, one needs to extract a part of list between two indices, similar to
 the non-standard but prevalent `subvector` for vectors. However, there is a specific
-use for this un-schemy function (due to the indexing of a list).
+use for this un-schemy (due to the indexing of a list) function.
 Furthermore, heuristically it turned out using folding via (`foldr`) instead of
 `append` to append an element to a list is more memory efficient, thus a
 fold-based append variant is supplied.
