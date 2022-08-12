@@ -224,4 +224,5 @@ the [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) (comma-separated
 * `(matrix-load str)` - Returns matrix loaded from string argument path.
 
 In the next post, I will focus on the `(chicken memory representation)` which provides an essential function
-for the matrix functions `matrix-submatrix`, `matrix-horcat`, `matrix-vercat`, `matrix-set`, and `matrix-implode`, not discussed here.
+for the matrix functions `matrix-horcat`, `matrix-vercat`, `matrix-col`, `matrix-submatrix`, `matrix-set`, `matrix-vec`,
+and `matrix-explode`, not discussed here.
