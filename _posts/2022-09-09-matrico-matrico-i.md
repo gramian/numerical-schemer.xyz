@@ -4,7 +4,8 @@ date: 2022-09-09
 tags: Lisp Scheme SchemeLang matrico matrico-Module
 ---
 
-## `matrico`'s `matrico` Module Part I: 
+## `matrico`'s `matrico` Module Part I:
+
 The `matrico` module is the user-facing part of the `matrico` project.
 Over the next few posts, I will describe the available functions therein.
 There are two sets of functions implemented in this module,
