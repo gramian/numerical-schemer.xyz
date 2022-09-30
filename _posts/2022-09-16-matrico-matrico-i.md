@@ -6,10 +6,15 @@ tags: Lisp Scheme SchemeLang matrico matrico-Module
 
 ## `matrico`'s `matrico` Module (Part I)
 
+**Series**:
+
+* Part I
+* [Part II](http://numerical-schemer.xyz/2022/09/30/matrico-matrico-ii.html)
+
 The `matrico` module is the user-facing part of the `matrico` project.
 Over the next few posts, I will describe the available functions therein.
 Almost all functions in this module are prefixed with "`mx`",
-with the exception of the `matrico` function.
+with the exception of the `matrico` function, implemented in the [`matrico.scm`](https://github.com/gramian/matrico/blob/main/matrico.scm) source file.
 While the functions prefixed with "`mx`" are operating on, or returning, matrices,
 the `matrico` function is a metadata function providing information about `matrico` itself (or the current machine).
 I start here by describing this "`matrico`"-function:

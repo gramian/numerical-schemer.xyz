@@ -45,10 +45,10 @@ Thus, the matrix record is defined with two slots,
 
 yielding the implicitly defined functions:
 
-* `(make-matrix lst cols)` - Returns a matrix with list-of-columns argument and number of columns argument.
-* `(matrix-data mat)` - Returns the list-of-columns payload of the matrix argument.
-* `(matrix-cols mat)` - Returns the number columns of the matrix argument.
-* `(matrix? any)` - Returns a boolean answering if argument is a matrix.
+* `(make-matrix lst cols)` - Returns a `matrix` with `list`-of-`column`s argument and `number` of columns argument.
+* `(matrix-data mat)` - Returns the `list`-of-`column`s payload of the `matrix` argument.
+* `(matrix-cols mat)` - Returns the `number` columns of the `matrix` argument.
+* `(matrix? any)` - Returns a `boolean` answering if argument is a `matrix`.
 
 The `make-matrix` function illustrates why this function cannot be user facing.
 Would it be, it is not guaranteed that a list of columns of equal length or even a list at all is passed as first slot,
@@ -60,8 +60,8 @@ The matrix functor takes care of assigning these correctly.
 A certain composition of procedures appears in quite a few matrix functions, hence this was extracted and made into two local functions.
 These functions are incomplete map operations of matrix arguments.
 
-* `(matrix-map* fun x)` - Returns matrix resulting from applying function argument to each column of the matrix argument.
-* `(matrix-map** fun x y)` - Returns matrix resulting from applying function argument to each column of the two matrix arguments.
+* `(matrix-map* fun x)` - Returns `matrix` resulting from applying function argument to each column of the `matrix` argument.
+* `(matrix-map** fun x y)` - Returns `matrix` resulting from applying function argument to each column of the two `matrix` arguments.
 
 Note that these are not complete map operations on matrices, as only the matrix functor knows about the map operation on a column.
 Also, for performance reasons, two separate functions were made instead of one with variadic arguments.
@@ -75,9 +75,9 @@ in [row-major](https://en.wikipedia.org/wiki/Row-_and_column-major_order) format
 which is more natural for terminal input or reading from text files, is provided.
 To procedurally assemble a matrix, a function is included which calculates an entry based on its row and column index.
 
-* `(make-matrix* rows cols val)` - Returns matrix of row and column argument dimension with all entries set to value argument.
-* `(make-matrix** lst)` - Returns matrix from list-of-lists argument.
-* `(matrix-generate fun rows cols)` - Returns matrix resulting from computing entries by applying function argument to entries' row and column indices.
+* `(make-matrix* rows cols val)` - Returns `matrix` of row and column argument dimension with all entries set to value argument.
+* `(make-matrix** lst)` - Returns `matrix` from `list`-of-`lists` argument.
+* `(matrix-generate fun rows cols)` - Returns `matrix` resulting from computing entries by applying function argument to entries' row and column indices.
 
 I use the stars to signify variants of the standard generator `make-matrix` which is automatically provided through creating the matrix record.
 
@@ -88,8 +88,8 @@ combiners create matrices from matrices, particularly by concatenation.
 This is implemented by horizontal concatenation, meaning joining lists of all matrix arguments (having the same number of rows),
 and vertical concatenation, meaning joining all respective columns of all matrix arguments (having the same number of columns).
 
-* `(matrix-horcat . mat)` - Returns matrix resulting from concatenating list-of-matrices argument horizontally.
-* `(matrix-vercat . mat)` - Returns matrix resulting from concatenating list-of-matrices argument vertically.
+* `(matrix-horcat . mat)` - Returns `matrix` resulting from concatenating `list`-of-`matrix`es argument horizontally.
+* `(matrix-vercat . mat)` - Returns `matrix` resulting from concatenating `list`-of-`matrix`es argument vertically.
 
 ### Dimensions
 
@@ -98,9 +98,9 @@ These include the number of rows, the number of entries, and if a matrix has the
 the latter is sometimes known as rank of a multi-dimensional array, but this is only correct in the sense of the [tensor rank](https://mathworld.wolfram.com/TensorRank.html),
 and not as "rank" typically used in [linear algebra](https://en.wikipedia.org/wiki/Rank_(linear_algebra)).
 
-* `(matrix-rows mat)` - Returns the number of rows of the matrix argument.
-* `(matrix-numel mat)` - Returns the total number of entries of the matrix argument.
-* `(matrix-dims mat)` - Returns `0` for 1x1, `1` for Nx1 or 1xN, or `2` for NxM dimensions of matrix argument. 
+* `(matrix-rows mat)` - Returns the `number` of rows of the `matrix` argument.
+* `(matrix-numel mat)` - Returns the total `number` of entries of the `matrix` argument.
+* `(matrix-dims mat)` - Returns `0` for 1x1, `1` for Nx1 or 1xN, or `2` for NxM dimensions of `matrix` argument. 
 
 I note again that the `matrix-cols` function is automatically provided through creating the matrix record.
 
@@ -117,15 +117,15 @@ Beyond single entries, a single column, a single row or a sub-matrix may need to
 for which functionality is included, the latter needs the `sublist` function form the [`utils` module](http://numerical-schemer.xyz/2022/06/12/matrico-utils.html).
 Another important accessor for matrices returns the matrix's diagonal - all entries with the same row and column index of a square matrix.
 
-* `(matrix-ref00 mat)` - Returns the entry of the first column and the first row of the matrix argument.
-* `(matrix-ref*0 mat row)` - Returns the entry of the first column at the row argument of the matrix argument.
-* `(matrix-ref mat row col)` - Returns the entry at the row argument and column argument of the matrix argument.
-* `(matrix-set mat row col val)` - Returns matrix with entry at the row argument and column argument of the matrix argument to value argument.
-* `(matrix-set! mat row col val)` - Returns `void`, mutate entry at the row argument and column argument of the matrix argument to value argument.
-* `(matrix-col mat col)` - Returns (column) matrix being the column argument of the matrix argument.
-* `(matrix-row mat row)` - Returns (row) matrix being the row argument of the matrix argument.
-* `(matrix-diag mat)` - Returns (column) matrix being the diagonal of matrix argument.
-* `(matrix-submatrix mat row1 row2 col1 col2)` - Returns matrix being the entries between row arguments and column arguments of matrix argument.
+* `(matrix-ref00 mat)` - Returns the entry of the first column and the first row of the `matrix` argument.
+* `(matrix-ref*0 mat row)` - Returns the entry of the first column at the row argument of the `matrix` argument.
+* `(matrix-ref mat row col)` - Returns the entry at the row argument and column argument of the `matrix` argument.
+* `(matrix-set mat row col val)` - Returns matrix with entry at the row argument and column argument of the `matrix` argument to value argument.
+* `(matrix-set! mat row col val)` - Returns `void`, mutate entry at the row argument and column argument of the `matrix` argument to value argument.
+* `(matrix-col mat col)` - Returns (column) `matrix` being at the column index argument of the `matrix` argument.
+* `(matrix-row mat row)` - Returns (row) `matrix` being at the row index argument of the matrix argument.
+* `(matrix-diag mat)` - Returns (column) `matrix` being the diagonal of the square `matrix` argument.
+* `(matrix-submatrix mat row1 row2 col1 col2)` - Returns `matrix` being the entries between row index arguments and column index arguments of `matrix` argument.
 
 ### Predicates
 
@@ -135,16 +135,16 @@ Furthermore, I may want to know if a matrix has the same number of rows and colu
 Given two matrices, I may want to know if those have they same number columns, rows or both.
 Lastly, it may be interesting to test for a provided predicate if any or all entries of a matrix fulfill it.
 
-* `(matrix-col? mat)` - Returns boolean answering if matrix argument has only one column.
-* `(matrix-row? mat)` - Returns boolean answering if matrix argument has only one row.
-* `(matrix-scalar? mat)` - Returns boolean answering if matrix argument has only one column and one row.
-* `(matrix-vector? mat)` - Returns boolean answering if matrix argument has only either one column or one row.
-* `(matrix-square? mat)` - Returns boolean answering if matrix argument has the same number of rows and columns.
-* `(matrix-samecols? x y)` - Returns boolean answering if matrix arguments have same number of columns.
-* `(matrix-samerows? x y)` - Returns boolean answering if matrix arguments have same number of rows.
-* `(matrix-samedims? x y)` - Returns boolean answering if matrix arguments have same number of columns and same number of rows.
-* `(matrix-any? pred mat)` - Returns boolean answering if any entry of matrix argument fulfills predicate argument.
-* `(matrix-all? pred mat)` - Returns boolean answering if all entries of matrix argument fulfill predicate argument.
+* `(matrix-col? mat)` - Returns `boolean` answering if `matrix` argument has only one column.
+* `(matrix-row? mat)` - Returns `boolean` answering if `matrix` argument has only one row.
+* `(matrix-scalar? mat)` - Returns `boolean` answering if `matrix` argument has only one column and one row.
+* `(matrix-vector? mat)` - Returns `boolean` answering if `matrix` argument has only either one column or one row.
+* `(matrix-square? mat)` - Returns `boolean` answering if `matrix` argument has the same number of rows and columns.
+* `(matrix-samecols? x y)` - Returns `boolean` answering if `matrix` arguments have same number of columns.
+* `(matrix-samerows? x y)` - Returns `boolean` answering if `matrix` arguments have same number of rows.
+* `(matrix-samedims? x y)` - Returns `boolean` answering if `matrix` arguments have same number of columns and same number of rows.
+* `(matrix-any? pred mat)` - Returns `boolean` answering if any entry of `matrix` argument fulfills predicate argument.
+* `(matrix-all? pred mat)` - Returns `boolean` answering if all entries of `matrix` argument fulfill predicate argument.
 
 I note that the `matrix?` predicate is automatically provided through creating the matrix record.
 
@@ -159,9 +159,9 @@ There are three reducers or folders required for a two-dimensional array, such a
 which are implemented as three functions, as opposed to a single function with an extra argument,
 due to the very different internals of these functions and their non-uniform return type.
 
-* `(matrix-colfold fun ini mat)` - Returns (row) matrix resulting from folding all columns of matrix argument pairwise by function argument starting with initial argument.
-* `(matrix-rowfold fun ini mat)` - Returns (column) matrix resulting from folding all rows of matrix argument pairwise by function argument starting with initial argument.
-* `(matrix-allfold fun ini mat)` - Returns entry-type resulting from folding row of all folded column of matrix argument by function argument starting with initial argument.
+* `(matrix-colfold fun ini mat)` - Returns (row) `matrix` resulting from folding all columns of `matrix` argument pairwise by function argument starting with initial argument.
+* `(matrix-rowfold fun ini mat)` - Returns (column) `matrix` resulting from folding all rows of `matrix` argument pairwise by function argument starting with initial argument.
+* `(matrix-allfold fun ini mat)` - Returns entry-type resulting from folding row of all folded column of `matrix` argument by function argument starting with initial argument.
 
 ### Mappers
 
@@ -174,8 +174,8 @@ The binary map is more involved, as not only matrices of same dimension should b
 
 This functionality is called "automatic brodcasting" (in Octave, NumPy, Julia) or "implicit expansion" (in MATLAB).
 
-* `(matrix-map fun mat)` - Returns matrix resulting from applying function argument to all matrix argument's entries.
-* `(matrix-broadcast fun x y)` - Returns matrix resulting from applying function to matrix arguments under broadcasting rules.
+* `(matrix-map fun mat)` - Returns `matrix` resulting from applying function argument to all `matrix` argument's entries.
+* `(matrix-broadcast fun x y)` - Returns `matrix` resulting from applying function to `matrix` arguments under broadcasting rules.
 
 ### Specific
 
@@ -198,12 +198,12 @@ because the first argument is assumed to be transposed: This allows an efficient
 Lastly, for performance and convenience, twin functions to "explode" a matrix into a list of column matrices,
 and "implode" a list of column matrices (with the same number of rows) into one matrix, where the latter wraps the `matrix-horcat` function are included.
 
-* `(matrix-vec mat)` - Returns (column) matrix resulting form concatenating columns of matrix argument vertically.
-* `(matrix-transpose mat)` - Returns matrix with entries of argument matrix, where the entries' row and column indices are exchanged.
-* `(matrix-scalar xt y)` - Returns entry-type resulting from computing scalar product of column matrix arguments with same number of rows.
-* `(matrix-dot* xt y)` - Returns matrix resulting from matrix multiplication of the matrix arguments, where the first argument is assumed transposed.
-* `(matrix-explode mat)` - Returns list-of-column-matrices from matrix argument.
-* `(matrix-implode lst)` - Returns matrix from list-of-column-matrices argument.
+* `(matrix-vec mat)` - Returns (column) `matrix` resulting form concatenating columns of `matrix` argument vertically.
+* `(matrix-transpose mat)` - Returns `matrix` with entries of argument `matrix`, where the entries' row and column indices are exchanged.
+* `(matrix-scalar xt y)` - Returns entry-type resulting from computing scalar product of column `matrix` arguments with same number of rows.
+* `(matrix-dot* xt y)` - Returns `matrix` resulting from matrix multiplication of the `matrix` arguments, where the first argument is assumed transposed.
+* `(matrix-explode mat)` - Returns `list`-of-column-`matrix`es from `matrix` argument.
+* `(matrix-implode lst)` - Returns `matrix` from `list`-of-column-`matrix`es argument.
 
 ### Utilities
 
@@ -218,9 +218,9 @@ Additionally, matrices need to be exported, so other numerical packages,
 such as MATLAB, Octave, NumPy or Julia can load them. The common format for all of these is 
 the [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) (comma-separated-value) format.
 
-* `(matrix-print fun mat)` - Returns `void`, prints argument matrix on the standard output, preprocessing matrix entries by function argument.
-* `(matrix-export str mat)` - Returns `void`, output argument matrix to CSV file at string argument path.
-* `(matrix-save str mat)` - Returns `void`, output argument matrix to S-expression formatted file at string argument path.
+* `(matrix-print fun mat)` - Returns `void`, prints argument `matrix` on the standard output, preprocessing matrix entries by function argument.
+* `(matrix-export str mat)` - Returns `void`, output argument `matrix` to CSV file at `string` argument path.
+* `(matrix-save str mat)` - Returns `void`, output argument `matrix` to S-expression formatted file at `string` argument path.
 * `(matrix-load str)` - Returns matrix loaded from string argument path.
 
 In the next post, I will focus on the `(chicken memory representation)` which provides an essential function
