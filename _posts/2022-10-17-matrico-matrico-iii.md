@@ -9,7 +9,7 @@ tags: Lisp Scheme SchemeLang matrico matrico-Module
 **Series**:
 
 * [Part I](http://numerical-schemer.xyz/2022/09/16/matrico-matrico-i.html)
-* [Part II](http://numerical-schemer.xyz/2022/09/16/matrico-matrico-ii.html)
+* [Part II](http://numerical-schemer.xyz/2022/09/30/matrico-matrico-ii.html)
 * Part III
 
 In this third part of the series of posts,
