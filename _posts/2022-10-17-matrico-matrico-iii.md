@@ -46,6 +46,7 @@ rather they have to be compatible dimensions, leading to the following five opti
 *** o *** = ***
 ***   ***   ***
 ```
+
 * One `matrix` argument is a column matrix, matching the column number of the other argument.
   The binary map function is applied as if the column matrix argument had as many columns as the other `matrix` arguments with all the same columns.
 ```
@@ -57,6 +58,7 @@ rather they have to be compatible dimensions, leading to the following five opti
 * o *** = ***
 *   ***   ***
 ```
+
 * One `matrix` argument is a row matrix, matching the row number of the other argument.
   The binary map function is applied as if the row matrix argument had as many rows as the other `matrix` arguments with all the same rows.
 ```
@@ -68,6 +70,7 @@ rather they have to be compatible dimensions, leading to the following five opti
     o *** = ***
       ***   ***
 ```
+
 * One `matrix` argument is a row matrix, the other is a column matrix.
   The binary map function is applied as if the row matrix argument had as many rows as the column matrix arguments with all the same rows,
   and the column matrix argument had as many columns as the row matrix arguments with all the same columns.
@@ -80,6 +83,7 @@ rather they have to be compatible dimensions, leading to the following five opti
 * o     = ***
 *         ***
 ```
+
 * One `matrix` argument is scalar.
   The binary map function is applied as if the scalar matrix or `flonum` had as many rows and columns as the other `matrix` argument all the same entries.
 ```
