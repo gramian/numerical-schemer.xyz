@@ -53,7 +53,9 @@ rather they have to be compatible dimensions, leading to the following five opti
 ***   *   ***
 *** o * = ***
 ***   *   ***
+```
 
+```
 *   ***   ***
 * o *** = ***
 *   ***   ***
@@ -65,7 +67,9 @@ rather they have to be compatible dimensions, leading to the following five opti
 ***   ***   ***
 *** o     = ***
 ***         ***
+```
 
+```
 ***   ***   ***
     o *** = ***
       ***   ***
@@ -78,7 +82,9 @@ rather they have to be compatible dimensions, leading to the following five opti
 ***   *   ***
     o * = ***
       *   ***
+```
 
+```
 *   ***   ***
 * o     = ***
 *         ***
@@ -90,7 +96,9 @@ rather they have to be compatible dimensions, leading to the following five opti
 ***       ***
 *** o * = ***
 ***       ***
+```
 
+```
     ***   ***
 * o *** = ***
     ***   ***
