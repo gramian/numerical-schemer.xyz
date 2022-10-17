@@ -67,9 +67,9 @@ rather they have to be compatible dimensions, leading to the following five opti
   The binary map function is applied as if the row matrix argument had as many rows as the column matrix arguments with all the same rows,
   and the column matrix argument had as many columns as the row matrix arguments with all the same columns.
 ```
-***   *   ***     *   ***   ***
-    o * = ***  ,  * o     = ***
-      *   ***     *         ***
+*   ***   ***     ***   *   ***
+* o     = ***  ,      o * = ***
+*         ***           *   ***
 ```
 
 * One `matrix` argument is scalar.
