@@ -10,6 +10,7 @@ tags: Lisp Scheme SchemeLang matrico matrico-Module
 
 * [Part I](http://numerical-schemer.xyz/2022/09/16/matrico-matrico-i.html)
 * Part II
+* [Part II](http://numerical-schemer.xyz/2022/09/16/matrico-matrico-iii.html)
 
 In this second part of the series of posts describing the `matrico` module, I will focus on the
 _Constructor_, _Dimension_, _Predicate_, and _Accessor_ type functions, which are contained in
