@@ -1,6 +1,6 @@
 ---
 title: "Matrico Module IIII"
-date: 2022-11-??
+date: 2022-11-30
 tags: Lisp Scheme SchemeLang matrico matrico-Module
 ---
 
