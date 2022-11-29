@@ -11,6 +11,7 @@ tags: Lisp Scheme SchemeLang matrico matrico-Module
 * [Part I](http://numerical-schemer.xyz/2022/09/16/matrico-matrico-i.html)
 * [Part II](http://numerical-schemer.xyz/2022/09/30/matrico-matrico-ii.html)
 * Part III
+* [Part IIII](http://numerical-schemer.xyz/2022/11/30/matrico-matrico-iiii.html)
 
 In this third part of the series of posts,
 I will describe the various _map_ and _reduce_ specializations provided by the `matrico` module.
