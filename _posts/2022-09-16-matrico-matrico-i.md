@@ -12,6 +12,7 @@ tags: Lisp Scheme SchemeLang matrico matrico-Module
 * [Part II](http://numerical-schemer.xyz/2022/09/30/matrico-matrico-ii.html)
 * [Part III](http://numerical-schemer.xyz/2022/10/17/matrico-matrico-iii.html)
 * [Part IIII](http://numerical-schemer.xyz/2022/11/30/matrico-matrico-iiii.html)
+* [Part V](http://numerical-schemer.xyz/2022/12/15/matrico-matrico-v.html)
 
 The `matrico` module is the user-facing part of the `matrico` project.
 Over the next few posts, I will describe the available functions therein.
