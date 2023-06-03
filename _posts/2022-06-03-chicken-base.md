@@ -59,7 +59,7 @@ I mostly, if not exclusively, use `assert` to test function arguments for validi
 
 ### Reducers
 
-While R5RS provides a `map` function, a "fold" function is not part of the standard,
+While R5RS provides a `map` function, a "fold" function is not part of the standard ([for a good reason](https://jeremykun.com/2013/09/30/the-universal-properties-of-map-fold-and-filter/)),
 Therefore these reducers are included:
 
 * `(foldl fun ini lst)` - Apply binary function argument pair-wise to argument initialized accumulator and elements of list argument head to tail.
@@ -91,7 +91,7 @@ is false? Well, nothing:
 * `(when pred expr)` - Evaluate expression argument if predicate is true.
 * `(void any ...)` - "Nothing" return value
 
-This `(void)` is what procedures - functions without return value - like `print` return.
+This `(void)` is also what procedures - functions without return value - like `print` return.
 
 ### Variable Arity
 

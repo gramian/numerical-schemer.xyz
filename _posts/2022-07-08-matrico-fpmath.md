@@ -24,7 +24,7 @@ converters are needed. R5RS provides a fixnum to flonum conversion, but its name
 `inexact->exact` is too unwieldy, thus a shorter alias `fp` is introduced.
 Another very useful converter is, given two fixnums representing numerator and
 denominator, a conversion to a flonum from such rational components, which is
-used below for constant provisioning.
+used below for constant provisioning (inspired by [fp-utils](http://wiki.call-cc.org/eggref/5/fp-utils#fp)).
 
 * `(fp n)` - Alias for `exact->inexact`, returns inexact flonum from exact fixnum argument.
 * `(fp% n d)` - Returns flonum from numerator fixnum and denominator fixnum arguments.
@@ -34,7 +34,7 @@ A tricky issue is comparing flonums for equality, due to their inexactness.
 However, any equality comparison boils down to a comparison against zero, in
 example via the difference of two flonums. To handle this, two functions are
 implemented, one to compare against exact zero, which is emphasized by two
-question-mark predicate indicators, and one to compare against a tolerance:
+question-mark predicate indicators, and one to compare against an absolute tolerance:
 
 * `(fpzero?? x)` - Returns true for zero, else false.
 * `(fpzero? x tol)` - Returns true if first argument is less than second argument, else false.

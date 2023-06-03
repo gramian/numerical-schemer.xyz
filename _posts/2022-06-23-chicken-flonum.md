@@ -7,9 +7,9 @@ tags: Lisp Scheme SchemeLang ChickenScheme Chicken-Module
 ## CHICKEN Scheme's included `flonum` module
 
 This is another short guided tour, this time through the functions of the CHICKEN Scheme `flonum` module.
-The purpose of this module is, similar to the [`fixnum` module](http://wiki.call-cc.org/man/5/Module%20(chicken%20fixnum)), to provide typed operations for floating-point numbers for improved performance.
+The purpose of this module is, similar to the [`(chicken fixnum)`](http://wiki.call-cc.org/man/5/Module%20(chicken%20fixnum)) module, to provide typed operations for floating-point numbers for improved performance.
 Additionally, in my opinion, using these functions increases readability, as the use of these functions underscores (and enforces) the type of their arguments.
-For the full reference, see the [module (chicken flonum)](http://wiki.call-cc.org/man/5/Module%20(chicken%20flonum)).
+For the full reference, see the module [`(chicken flonum)`](http://wiki.call-cc.org/man/5/Module%20(chicken%20flonum)).
 
 ### Arithmetic Operations
 Essentially, this module provides specialized functions for all mathematical functions defined in R5RS,

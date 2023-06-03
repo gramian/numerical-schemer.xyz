@@ -6,7 +6,7 @@ tags: Lisp Scheme SchemeLang matrico matrico-Module
 
 ## `matrico`'s Utilities Module `utils`
 
-This is the base module of the `matrico` project and imported by every other module.
+`utils` is the base module of the `matrico` project and imported by every other module.
 It contains a collection of miscellaneous bindings, macros and functions for general use.
 You can take a look at the `src/utils.scm` source file [here](https://github.com/gramian/matrico/blob/main/src/utils.scm).
 
@@ -18,7 +18,7 @@ for this, I use a macro that makes the syntax definition look like a function de
 Second, I need to rename bindings on-the-fly, for which I use a simple macro also PC Scheme had.
 Also, I require a shortcut for asserting a variable argument list of tests, typically to check argument types and properties.
 There are two reason for not using a function here: asserts are removed by the CHICKEN compiler in "unsafe"-mode, so this might litter,
-and, I am using `and` which I cannot pass into `apply` since it is special.
+and, I am using `and` which I cannot pass into `apply` since it is a special form.
 Lastly, I was intruiged by Clojure's [rich comments](https://clojuredocs.org/clojure.core/comment), which were already part of the [T language](http://mumble.net/~jar/tproject/).
 Altogether:
 
@@ -53,7 +53,7 @@ These are bindings and can't use the `alias` macro, otherwise they couldn't be p
 For performance and readability reasons I want to ensure and document that for
 indexing operations fixed-size integers and integer operations are used. CHICKEN
 has the matching [(chicken fixnum)](http://wiki.call-cc.org/man/5/Module%20(chicken%20fixnum))
-module for this purpose. However, I needed to add a few functions, like 
+module for this purpose. However, I added a few currying macros, like 
 increment and decrement as well as predicates comparing to zero:
 
 * `(fx+1 x)` - Increment fixnum argument.
@@ -98,10 +98,11 @@ definition (using the factorial) is very inefficient.
 
 ### Standard Variants
 Scheme, particularly CHICKEN Scheme, is awesome. Whatever you can imagine, be it
-docstrings or a data-file loading, one can implement with a few lines of code:
+docstrings (see also [this](https://demonastery.org/2011/11/docstrings-in-my-chicken/))
+or a data-file loading, one can implement with a few lines of code:
 
 * `(define* ...)` - Defines a binding together with a docstring for various forms of `define`.
 * `(load* pathstr)` - Loads and evaluates file a argument string path and returns the result of the last expression.
 
-While `define*` is a language extension via a pattern matching macro, `load*` is a function using `eval`.
-
+While `define*` is a language extension via a pattern matching macro, `load*` is wrapping `load`,
+[whose return value is unspecified](http://scheme-reports.org/mail/scheme-reports/msg02021.html), a function using `eval`.

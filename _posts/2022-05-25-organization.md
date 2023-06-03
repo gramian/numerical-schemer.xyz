@@ -9,12 +9,12 @@ tags: Lisp Scheme SchemeLang matrico
 Overall, the `matrico` project is supposed to be a module wrapped in a CHICKEN Scheme egg.
 Hence, a module named "matrico" contains all user-facing functions.
 There are two types of function in the matrico module:
-first, functions beginning with "matrico", which provide `matrico` specific meta-data functionality,
+first, a function named "matrico", which provides `matrico` specific meta-data functionality,
 second, functions beginning with "mx", which provide the core **m**atri**x** functionality.
-While the former ("matrico" functions) are defined in the `matrico.scm` source file,
-the latter ("mx" functions) are defined in the `src/mx.scm` source file, that is included (CHICKEN Scheme provides `include-relative`) into `matrico.scm`.
+While the former ("matrico" function) is defined in the `matrico.scm` source file,
+the latter ("mx" functions) are defined in the `src/mx.scm` source file, and is included (CHICKEN Scheme provides `include-relative`) into `matrico.scm`.
 
-All but one module depend on the `utils` module, defined in `src/utils.scm`.
+All modules depend on the `utils` module, defined in `src/utils.scm`.
 This module provides extra generic or universal functionality.
 The `fpmath` module, defined in `src/fpmath.scm` depends on `utils`,
 and provides additional flonum (floating-point number) functions.
