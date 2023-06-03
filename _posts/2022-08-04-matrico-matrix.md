@@ -45,9 +45,9 @@ Thus, the matrix record is defined with two slots,
 
 yielding the implicitly defined functions:
 
-* `(make-matrix lst cols)` - Returns a `matrix` with `list`-of-`column`s argument and `number` of columns argument.
-* `(matrix-data mat)` - Returns the `list`-of-`column`s payload of the `matrix` argument.
+* `(make-matrix cols lst)` - Returns a `matrix` with `list`-of-`column`s argument and `number` of columns argument.
 * `(matrix-cols mat)` - Returns the `number` columns of the `matrix` argument.
+* `(matrix-data mat)` - Returns the `list`-of-`column`s payload of the `matrix` argument.
 * `(matrix? any)` - Returns a `boolean` answering if argument is a `matrix`.
 
 The `make-matrix` function illustrates why this function cannot be user facing.
@@ -183,7 +183,7 @@ There a some operations specific to matrices, or rather two-dimensional arrays,
 and independent of the type of the entries that are generically provided in this functor module.
 There is (mathematical) [vectorization](https://en.wikipedia.org/wiki/Vectorization_(mathematics)), meaning stacking all columns of a matrix,
 and [transposition](https://en.wikipedia.org/wiki/Transpose) of a matrix, which swaps row and column indices of each entry.
-Whereas the transposition is implemented elegantly using a similar approach to [list-of-list matrix tranposition](https://rosettacode.org/wiki/Matrix_transposition#Scheme).
+Whereas the transposition is implemented elegantly using a similar approach to [list-of-list matrix transposition](https://rosettacode.org/wiki/Matrix_transposition#Scheme).
 
 Given two column matrices with the same number of rows, the [scalar product](https://en.wikipedia.org/w/index.php?title=Scalar_product) is an essential operation in (vector) linear algebra,
 also known as inner product.
@@ -194,6 +194,9 @@ as it computes all possible scalar products of all rows of the first operand and
 I call the matrix multiplication `dot`-product as [NumPy](https://numpy.org/doc/stable/reference/generated/numpy.dot.html) does, since it is mathematically more expressive.
 The implemented function is called `dot*` (dot-star, a special variant of `dot`) though,
 because the first argument is assumed to be transposed: This allows an efficient implementation for the list-of-column matrix data model.
+This may seem a little odd as there is no standard version of `dot`, but the intention here is to use an
+efficient algorithm by default, and the frontend can then offer a standard `dot` matrix maultiplication
+and transpose the arguments as needed.
 
 Lastly, for performance and convenience, twin functions to "explode" a matrix into a list of column matrices,
 and "implode" a list of column matrices (with the same number of rows) into one matrix, where the latter wraps the `matrix-horcat` function are included.

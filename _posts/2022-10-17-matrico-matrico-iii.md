@@ -91,7 +91,6 @@ XXX       XXX         XXX   XXX
 #### Advanced Functions
 
 * `(mx^ x y)`  - Returns `matrix` of entry-wise exponentiation of base `matrix` argument to exponent `matrix` argument.
-* `(mx-log x y)` - Returns `matrix` of entry-wise logarithm to base `matrix` argument of anti-logarithm `matrix` argument.
 * `(mx-where pred x y)` - Returns `matrix` of entries of first or second `matrix` argument, depending on binary predicate `function` argument evaluated on respective `matrix` arguments' entries.
 * `(mx*+ a x y)` - Returns `matrix` of entry-wise sums of first `matrix` argument, scaled by `flonum` argument, with second `matrix` argument.
 

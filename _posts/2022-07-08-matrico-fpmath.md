@@ -64,7 +64,7 @@ and [MIT Scheme](https://www.gnu.org/software/mit-scheme/documentation/stable/mi
 * `(fprec x)` - Returns the reciprocal of the flonum argument.
 * `(fp*+ x y z)` - Returns the fused multiply-add of the flonum arguments.
 
-In future versions of CHICKEN Scheme (maybe version 5.4), `(chicken flonum)`
+In future versions of CHICKEN Scheme (likely 5.4), `(chicken flonum)`
 will include the `fp*+` function, hence it is wrapped in a CHICKEN version
 dependent `cond-expand`.
 
@@ -122,7 +122,6 @@ calculator functionality (in their naming), based on the [logarithm rules](https
 * `(fpln x)` - Alias for `fplog`, returns natural logarothm of flonum argument.
 * `(fplb x)` - Returns binary logarithm (base 2) of flonum argument.
 * `(fplg x)` - Returns decimal logarithm (base 10) of flonum argument.
-* `(fplogb b x)` - Returns logarithm to **positive** flonum base argument of flonum argument.
 
 Note, that the utilized values `ln(2)` (`(fplog 2.0)`) and `ln(10)` (`(fplog 10.0)`) are neither
 hard-coded as constants nor computed during a function call to `fplb` or `fplg`, but pre-computed once on load of the module. 
@@ -140,6 +139,8 @@ module via the [exponential definitions](https://en.wikipedia.org/wiki/Hyperboli
 * `(fpasinh x)` - Returns area hyperbolic sine (inverse hyperbolic sine) for flonum argument.
 * `(fpacosh x)` - Returns area hyperbolic cosine (inverse hyperbolic cosine) for flonum argument.
 * `(fpatanh x)` - Returns area hyperbolic tangent (inverse hyperbolic tangent) flor flonum argument.
+
+Theses function will also be part of a future CHICKEN version (likely 5.4).
 
 ### Haversed Trigonometric Functions
 A lesser used variant of the trigonometric functions are the [haversed sine
@@ -175,7 +176,7 @@ Note, that `fpsinc` can be normalized by scaling its argument,
 while `fpstirling` can be tested with the [`utils` module](http://numerical-schemer.xyz/2022/06/12/matrico-utils.html)'s `factorial` function.
 
 ### Utilities
-To print matrices on the terminal a fixed element print width is necessary.
+To print matrices on the terminal, a fixed element print width is necessary.
 Given the `flonum-print-precision` from `(chicken flonum)`, this is only
 workable with a precision of `17`, which in turn would mean on a standard 80x25
 terminal window that only a matrix with 4 columns could be printed without

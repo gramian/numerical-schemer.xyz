@@ -31,7 +31,7 @@ and extracting the [diagonal](https://en.wikipedia.org/wiki/Diagonal_matrix#Matr
 * `(mx-transpose A)` - Returns **matrix** with entries of argument **matrix** with swapped row and column indices.
 * `(mx-sympart A)` - Returns **matrix** being the symmetric part of argument **matrix**.
 * `(mx-skewpart A)` - Returns **matrix** being the skew-symmetric part of argument **matrix**.
-* `(mx-diagonal A)` - Returns column-**matrix** being the diagonal of argument **matrix**.
+* `(mx-diagonal A)` - Returns diagonal **matrix** argument column **matrix**.
 
 #### Linear Problems
 
@@ -61,9 +61,9 @@ all using the same core algorithm:
 * `(mx-qr A)` - Returns a pair of **matrix**es (Q and R) for an argument **matrix**
 * `(mx-solver A)` - Returns a **function** (expecting a column matrix argument) that solves the linear problem formed with the argument **matrix**. 
 * `(mx-solve A b)` - Returns a column matrix solving the linear problem formed by argument **matrix** and column **matrix**.
+* `(mx-orth A)` - Returns **matrix** representing an orthogonalization of argument **matrix**.
 
-Use `mx-qr` if no linear problem is to be solved, but the factor matrices are required,
-for example in [orthogonalization](https://en.wikipedia.org/wiki/Orthogonalization).
+Use `mx-qr` if no linear problem is to be solved, but the factor matrices are required.
 Use `mx-solver` if multiple linear problems need to be solved with the same matrix `A` but different right-hand-sides `b`, as the returned function caches the QR decomposition as closure and thus prevents recomputation.
 Use `mx-solve` if only a single solution to a linear problem is required.
 
@@ -158,7 +158,7 @@ Particularly, both methods are of the ["two register" class ("2R*")](https://doi
 this means that internally an iteration requires merely two vector (column-matrix) registers,
 of which one is constant for each sub-step iteration.
 This is the minimum memory consumption possible.
-Furthermore, both methods induce a family of method as either allow to increase the number of sub-steps or stages, to increase stability,
+Furthermore, both time steppers induce a family of methods as either allows to increase the number of sub-steps or stages, to increase stability,
 and hence approximate more complicated problems:
 First, the family of implemented [hyperbolic Runge-Kutta methods](https://doi.org/10.1016/0378-4754(84)90056-9) is aimed at transport, advection, or non-normal problems and require a stability region around the imaginary axis.
 These hyperbolic Runge-Kutta methods have the maximum hyperbolic stability limit for an explicit second order method of chosen number of stages.
@@ -171,5 +171,5 @@ Strong stability preserving (SSP) means that if a first order explicit Euler met
 Instead of just a vector field also a **pair** of a vector field **procedure** and an output function **procedure** can be passed, which allows to simulate input-output systems, typical in [system theory](https://en.wikipedia.org/wiki/Dynamical_systems_theory) and [control theory](https://en.wikipedia.org/wiki/Control_theory).
 
 This sums up the highest-level functionality of `matrico`.
-The next post will mob up utility and private functions for completeness,
+The next post will mop up utility and private functions for completeness,
 and thereby conclude this series.

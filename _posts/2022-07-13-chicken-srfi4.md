@@ -9,7 +9,7 @@ tags: Lisp Scheme SchemeLang ChickenScheme Chicken-Module
 The next mini (incomplete) guided tour through an included CHICKEN Scheme module is about [`(chicken srfi-4)`](http://wiki.call-cc.org/man/5/Module%20srfi-4), an implementation of [SRFI-4](https://srfi.schemers.org/srfi-4/srfi-4.html).
 This module provides homogeneous vectors, particularly double-precision flonum vectors (`f64vector`s), which can only hold flonums.
 In the same way `(chicken flonum)` is an included module for performance reasons,
-`(chicken srfi4)` provides increases performance for vectors of entries of a single type.
+`(chicken srfi4)` provides increased performance for vectors of entries of a single type.
 While SRFI-4 defines ten types of homogeneous vectors:
 
 * unsigned integer: 8-bit (`u8`), 16-bit (`u16`), 32-bit (`u32`), 64-bit (`u64`),

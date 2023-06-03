@@ -6,11 +6,11 @@ tags: Lisp Scheme SchemeLang matrico matrico-Module
 
 ## `matrico`'s Double-Precision Flonum Vector `f64vector` Module
 
-For `matrico`, the basic homogeneous vector support of the included [`srfi-4`](https://gramian.github.io/numerical-schemer.xyz/2022/07/13/chicken-srfi4.html) module needs to expanded to provide basic functional tools,
+For `matrico`, the basic homogeneous vector support of the included [`srfi-4`](https://gramian.github.io/numerical-schemer.xyz/2022/07/13/chicken-srfi4.html) module needs to be expanded to provide basic functional tools,
 such as "map" and "reduce" functions.
 I limit myself to the `f64vector` variant of homogeneous vectors, as this type will be a basis for `matrico`'s matrix type.
 This module imports the [`fpmath`](https://gramian.github.io/numerical-schemer.xyz/2022/07/08/matrico-fpmath.html) module,
-solely for its `fp*+` function which is needed for the implemented dot product function.
+solely for its `fp*+` function which is needed for the implemented dot product function (`f64vector-dot` see below).
 However, in the future, once `(chicken flonum)` provides `fp*+` natively and former versions don't need to be supported,
 i.e. Ubuntu LTS repositories feature a CHICKEN including `fp*+`, `fpmath` can be removed from the list of imports.
 As this module is useless without the `(chicken srfi-4)` module, it is reexported.
@@ -49,7 +49,7 @@ Hence, I added a variant of map, whose function has, in addition to the vector e
 similar to Gauche's [`vector-map-index`](https://practical-scheme.net/gauche/man/gauche-refe/Vector-family.html#index-vector_002dmap_002dwith_002dindex)
 and `vector-map` in [SRFI-43](https://srfi.schemers.org/srfi-43/srfi-43.html).
 For lists however, I made it a rule, that whenever I was considering list indices (and thus may want a `map-index`),
-I would rethink the algorithm; of course, there are always exceptions, i.e. [`sublist`](https://gramian.github.io/numerical-schemer.xyz/2022/06/12/matrico-utils.html).
+I would rethink the algorithm.
 
 A sibling of the `map` function, is the `for-each` function, which, opposed to `map`, does not return a list (or vector),
 but always iterates in order through the container.

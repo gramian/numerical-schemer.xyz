@@ -29,7 +29,7 @@ Furthermore, one may want to ask if something is an atom instead of asking if it
 * `(atom? x)` - Is argument not a pair?
 
 Even though given `+`, `-`, and `pair?`, I wonder, why these very convenient functions have not found their way into R5RS,
-especally due to their prominent use in [The Little Schemer](https://mitpress.mit.edu/books/little-schemer-fourth-edition).
+especially due to their prominent use in [The Little Schemer](https://mitpress.mit.edu/books/little-schemer-fourth-edition).
 
 ### Special Function
 
