@@ -44,41 +44,41 @@ rather they have to be compatible dimensions, leading to the following five opti
 * Both `matrix` arguments have the same number of rows and columns.
   The binary map function is applied to the arguments' respective entries with the same row and column index.
 ```
-XXX   XXX   XXX
-XXX o XXX = XXX
-XXX   XXX   XXX
+⎡XXX⎤   ⎡XXX⎤   ⎡XXX⎤
+⎢XXX⎥ o ⎢XXX⎥ = ⎢XXX⎥
+⎣XXX⎦   ⎣XXX⎦   ⎣XXX⎦
 ```
 
 * One `matrix` argument is a column matrix, matching the column number of the other argument.
   The binary map function is applied as if the column matrix argument had as many columns as the other `matrix` arguments with all the same columns.
 ```
-XXX   X   XXX     X   XXX   XXX
-XXX o X = XXX  ,  X o XXX = XXX
-XXX   X   XXX     X   XXX   XXX
+⎡XXX⎤   ⎡X⎤   ⎡XXX⎤     ⎡X⎤   ⎡XXX⎤   ⎡XXX⎤
+⎢XXX⎥ o ⎢X⎥ = ⎢XXX⎥  ,  ⎢X⎥ o ⎢XXX⎥ = ⎢XXX⎥
+⎣XXX⎦   ⎣X⎦   ⎣XXX⎦     ⎣X⎦   ⎣XXX⎦   ⎣XXX⎦
 ```
 
 * One `matrix` argument is a row matrix, matching the row number of the other argument.
   The binary map function is applied as if the row matrix argument had as many rows as the other `matrix` arguments with all the same rows.
 ```
-XXX   XXX   XXX     XXX   XXX   XXX
-XXX o     = XXX  ,      o XXX = XXX
-XXX         XXX           XXX   XXX
+⎡XXX⎤   [XXX]   ⎡XXX⎤    [XXX]   ⎡XXX⎤   ⎡XXX⎤
+⎢XXX⎥ o       = ⎢XXX⎥  ,       o ⎢XXX⎥ = ⎢XXX⎥
+⎣XXX⎦           ⎣XXX⎦            ⎣XXX⎦   ⎣XXX⎦
 ```
 
 * One `matrix` argument is a row matrix, the other is a column matrix.
   The binary map function is applied as if the row matrix argument had as many rows as the column matrix arguments with all the same rows, and the column matrix argument had as many columns as the row matrix arguments with all the same columns.
 ```
-X   XXX   XXX     XXX   X   XXX
-X o     = XXX  ,      o X = XXX
-X         XXX           X   XXX
+⎡X⎤   [XXX]   ⎡XXX⎤    [XXX]   ⎡X⎤   ⎡XXX⎤
+⎢X⎥ o       = ⎢XXX⎥  ,       o ⎢X⎥ = ⎢XXX⎥
+⎣X⎦           ⎣XXX⎦            ⎣X⎦   ⎣XXX⎦
 ```
 
 * One `matrix` argument is scalar.
   The binary map function is applied as if the scalar matrix or `flonum` had as many rows and columns as the other `matrix` argument all the same entries.
 ```
-XXX       XXX         XXX   XXX
-XXX o X = XXX  ,  X o XXX = XXX
-XXX       XXX         XXX   XXX
+⎡XXX⎤       ⎡XXX⎤         ⎡XXX⎤   ⎡XXX⎤
+⎢XXX⎥ o X = ⎢XXX⎥  ,  X o ⎢XXX⎥ = ⎢XXX⎥
+⎣XXX⎦       ⎣XXX⎦         ⎣XXX⎦   ⎣XXX⎦
 ```
 
 #### Basic Arithmetic
@@ -92,16 +92,16 @@ XXX       XXX         XXX   XXX
 
 * `(mx^ x y)`  - Returns `matrix` of entry-wise exponentiation of base `matrix` argument to exponent `matrix` argument.
 * `(mx-where pred x y)` - Returns `matrix` of entries of first or second `matrix` argument, depending on binary predicate `function` argument evaluated on respective `matrix` arguments' entries.
-* `(mx*+ a x y)` - Returns `matrix` of entry-wise sums of first `matrix` argument, scaled by `flonum` argument, with second `matrix` argument.
+* `(mx-axpy a x y)` - Returns `matrix` of entry-wise sums of first `matrix` argument, scaled by `flonum` argument, with second `matrix` argument.
 
 ### Mappers
 
 _Mappers_ describe an entry-wise processing of a matrix.
 The unary map function is applied to each entry yielding a result matrix of the same dimensions. 
 ```
-XXX    XXX
-XXX -> XXX
-XXX    XXX
+⎡XXX⎤    ⎡XXX⎤
+⎢XXX⎥ -> ⎢XXX⎥
+⎣XXX⎦    ⎣XXX⎦
 ```
 
 #### Elementary Functions
@@ -187,21 +187,21 @@ There are three variants:
 
 * Composition of row entries yielding a column `matrix` by _fold_ ing each row into a scalar.
 ```
-XXX    X
-XXX -> X
-XXX    X
+⎡XXX⎤    ⎡X⎤
+⎢XXX⎥ -> ⎢X⎥
+⎣XXX⎦    ⎣X⎦
 ```
 * Composition of column entries yielding a row `matrix` by _fold_ ing each column into a scalar.
 ```
-XXX    XXX
-XXX ->
-XXX
+⎡XXX⎤    [XXX]
+⎢XXX⎥ ->
+⎣XXX⎦
 ```
 * Composition of all entries yielding a `flonum` by _fold_ ing all entries into a scalar.
 ```
-XXX
-XXX -> X
-XXX
+⎡XXX⎤
+⎢XXX⎥ -> X
+⎣XXX⎦
 ```
 
 #### Sums

@@ -55,6 +55,10 @@ A sibling of the `map` function, is the `for-each` function, which, opposed to `
 but always iterates in order through the container.
 Here, I implemented `f64vector` versions of `for-each` and `for-each-index`,
 whose practical use lies in my case only in side-effect operations, like printing to terminal or writing to file.
+As a special case due to its importance for numerical algorithms, a specialized mapper is included,
+which maps a scalar and two vectors of the same dimensions to a new vector,
+where entries of the first vector are scaled by the scalar and added to the second vector.
+This operation is known in the [BLAS](https://en.wikipedia.org/wiki/Basic_Linear_Algebra_Subprograms#Level_1) library as "axpy" - a (times) x plus y.
 
 * `(f64vector-map fun vec)` - Returns `f64vector` of elements of function argument applied to `f64vector` argument's elements.
 * `(f64vector-map fun vec wec)` - Returns `f64vector` of elements of function argument applied to `f64vector` arguments' elements.
@@ -62,6 +66,7 @@ whose practical use lies in my case only in side-effect operations, like printin
 * `(f64vector-map-index fun . vec)` - Returns `f64vector` of elements of function argument applied to `f64vector` arguments' elements and their index.
 * `(f64vector-foreach fun . vec)` - Returns `void`, apply function argument applied to `f64vector` arguments' elements in-order.
 * `(f64vector-foreach-index fun . vec)` - Returns `void`, apply function argument applied to `f64vector` arguments' elements in-order and their index.
+* `(f64vector-axpy a x y)` - Returns `f64vector` of elements given by`flonum` a times first `f64vector` plus second `f64vector`. 
 
 ### Reducers
 Finally, and of vital importance, the folders (or reducers) are defined.

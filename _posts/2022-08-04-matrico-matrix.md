@@ -185,6 +185,9 @@ There is (mathematical) [vectorization](https://en.wikipedia.org/wiki/Vectorizat
 and [transposition](https://en.wikipedia.org/wiki/Transpose) of a matrix, which swaps row and column indices of each entry.
 Whereas the transposition is implemented elegantly using a similar approach to [list-of-list matrix transposition](https://rosettacode.org/wiki/Matrix_transposition#Scheme).
 
+The [vector "axpy" operation](http://numerical-schemer.xyz/2022/07/20/matrico-f64vector.html) is here generalized to matrices.
+This is neither a broadcasted operation due to performance reasons nor a plain mapper due to the non-matrix argument.
+
 Given two column matrices with the same number of rows, the [scalar product](https://en.wikipedia.org/w/index.php?title=Scalar_product) is an essential operation in (vector) linear algebra,
 also known as inner product.
 The outer product counter part is not defined here, as it can be more easily achieved by a broadcasting / expansion operation.
@@ -203,6 +206,7 @@ and "implode" a list of column matrices (with the same number of rows) into one 
 
 * `(matrix-vec mat)` - Returns (column) `matrix` resulting form concatenating columns of `matrix` argument vertically.
 * `(matrix-transpose mat)` - Returns `matrix` with entries of argument `matrix`, where the entries' row and column indices are exchanged.
+* `(matrix-axpy a x y)` - Returns `matrix` resulting from applying "axpy" function to scalar and `matrix` arguments.
 * `(matrix-scalar xt y)` - Returns entry-type resulting from computing scalar product of column `matrix` arguments with same number of rows.
 * `(matrix-dot* xt y)` - Returns `matrix` resulting from matrix multiplication of the `matrix` arguments, where the first argument is assumed transposed.
 * `(matrix-explode mat)` - Returns `list`-of-column-`matrix`es from `matrix` argument.
