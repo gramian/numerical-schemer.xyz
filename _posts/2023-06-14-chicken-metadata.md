@@ -63,7 +63,7 @@ Here is how a manifest for a `matrico` `snow` package could look:
   (version "0.0")
   (authors "Christian Himpe")
   (description "A flonum matrix module for CHICKEN Scheme.")
-  (license 'bsd)
+  (license 'zlib-acknowledgement)
   (manual "README.md")
   (test "tests/run.scm"))
 ```
