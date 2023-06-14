@@ -55,7 +55,7 @@ The remaining keys are discussed in relation to contenders summarized in the fol
 ### Snow Package
 
 `Snow` is an implementation independent package repository for R7RS codes.
-Here is how a manifest for a `matrico` `snow` package could look:
+Here is how a manifest for a `matrico` `Snow` package could look:
 
 ```scheme
 (package
@@ -82,7 +82,7 @@ Following is a prototypical `Akku` manifest for `matrico`:
   (homepage "http://numerical-schemer.xyz"))
 ```
 
-### Common Scheme
+### Common Scheme Module
 
 `Common Scheme` is a portable module system for various Schemes.
 In contrast to the other analyzed metadata formats,
