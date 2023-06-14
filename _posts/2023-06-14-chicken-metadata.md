@@ -1,10 +1,10 @@
 ---
-title: "CHICKEN Scheme Metadata"
+title: "CHICKEN Metadata"
 date: 2023-06-14
 tags: Lisp Scheme SchemeLang Chicken-Scheme matrico
 ---
 
-## Scheme-based Software Package Manifests
+## Scheme-Based Software Package Manifests
 
 One of the highlights of CHICKEN Scheme is it's "egg" (community) [extension repository](http://eggs.call-cc.org/5/).
 To describe such an extension to the repository and hence to a potential user,
