@@ -149,10 +149,11 @@ The `Snow` vocabulary has a `manual` key-value pair.
 Similar to `homepage`, this is of lesser use for CHICKEN due to the online egg documentation.
 However, pointing to a text file that could be installed with the egg files as offline documentation could be useful.
 
-Overall, CHICKEN eggs provide all typical metadata fields,
-but in my humble opinion `author` and `license` fields could be improved.
+Summing up, CHICKEN eggs provide all typical metadata fields,
+but in my humble opinion the `author` and `license` fields could be improved.
 The documentation of the CHICKEN egg metadata is definitely the best among the compared formats,
-with the minor remark that it does not state minimally required keys (as neither of the other discussed format's docs do).
+with the minor remark that it does not state minimally required keys (as do neither of the other discussed formats' docs).
+But overall, the egg format feels well thought-out and useful.
 
 I may update this post with further insights,
 but next, in a trilogy of posts, I will explain high complexity algorithms in `matrico`.
