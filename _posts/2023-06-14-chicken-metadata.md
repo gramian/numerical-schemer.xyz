@@ -112,7 +112,7 @@ An incomplete definition for a `matrico` `Guix` package follows:
     (name "matrico")
     (version "0.0")
     (synopsis "A flonum matrix module for CHICKEN Scheme.")
-    (description "")
+    (description "...")
     (license zlib-acknowledgement)
     (home-page "http://numerical-schemer.xyz")
     (source ...)))
@@ -152,7 +152,7 @@ However, pointing to a text file that could be installed with the egg files as o
 Overall, CHICKEN eggs provide all typical metadata fields,
 but in my humble opinion `author` and `license` fields could be improved.
 The documentation of the CHICKEN egg metadata is definitely the best among the compared formats,
-with the minor remark that it does not state minimally required keys (as none of the format docs do).
+with the minor remark that it does not state minimally required keys (as neither of the other discussed format's docs do).
 
 I may update this post with further insights,
 but next, in a trilogy of posts, I will explain high complexity algorithms in `matrico`.

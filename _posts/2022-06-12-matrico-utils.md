@@ -15,7 +15,6 @@ Scheme's macro system is insanely powerful.
 However, I often only need a handful of macro helpers.
 First, the generic `define-syntax` is to bulky if you only have a single rule;
 for this, I use a macro that makes the syntax definition look like a function definition, inspired by [Guile](https://www.gnu.org/software/guile/manual/html_node/Syntax-Rules.html#Shorthands).
-Second, I need to rename bindings on-the-fly, for which I use a simple macro also PC Scheme had.
 Also, I require a shortcut for asserting a variable argument list of tests, typically to check argument types and properties.
 There are two reason for not using a function here: asserts are removed by the CHICKEN compiler in "unsafe"-mode, so this might litter,
 and, I am using `and` which I cannot pass into `apply` since it is a special form.
@@ -23,7 +22,6 @@ Lastly, I was intruiged by Clojure's [rich comments](https://clojuredocs.org/clo
 Altogether:
 
 * `(define-syntax-rule )` - Wrapper for single rule macros.
-* `(alias aka name)` - Replaces first argument with second argument.
 * `(must-be arg ...)` - Wrapper for `assert` of `and` with variable number arguments.
 * `(comment ...)` - S-expression comment, all content is ignored and void is returned.
 
