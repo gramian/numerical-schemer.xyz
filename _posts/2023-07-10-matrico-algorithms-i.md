@@ -32,10 +32,10 @@ but either are outside the scope of **matrico** and this post.
 
 Given two matrices `X` and `Y`, an element-wise computation of the matrix product `Z` can be described by:
 
-$$
-X \in \mathbb{R}^{M \times K}, Y \in \mathbb{R}^{K \times N} \\
-X \cdot Y := Z \in \mathbb{R}^{M \times N} : Z_{mn} = \sum_{k=1}^K X_{mk} Y_{kn}
-$$
+```
+X ∈ ℝᴹ×ᴷ, Y ∈ ℝᴷ×ᴺ
+X ⋅ Y := Z ∈ ℝᴹ×ᴺ : Zₘₙ = ∑ₖ₌₁ᴷ Xₘₖ Yₖₙ
+```
 
 For the two matrices to be compatible for matrix multiplication,
 the first operand's (`X`) column dimension `K` must match the second operand's (`Y`) row dimension `K`.
@@ -54,11 +54,11 @@ In other words: The matrix product of matrices `X` and `Y` is computed, given `X
 And, the arguments are thus compatible for matrix multiplication if their numbers of rows agree.
 In mathematical terms we slightly reformulate the above formula to:
 
-$$
-X \cdot Y := Z \in \mathbb{R}^{M \times N} : Z_{mn} = \sum_{k=1}^K X^T_{km} Y_{kn}
-$$
+```
+X ⋅ Y := Z ∈ ℝᴹ×ᴺ : Zₘₙ = ∑ₖ₌₁ᴷ Xᵀₖₘ Yₖₙ
+```
 
-In (CHICKEN) Scheme code this is implemented by the internal function `matrix-dot*`: 
+In (CHICKEN) Scheme code this is implemented by the internal function [`matrix-dot*`](https://github.com/gramian/matrico/blob/main/src/matrix.scm#L332): 
 
 ```scheme
 (define (matrix-dot* xt y)
@@ -86,11 +86,11 @@ Then, making up the cubic complexity, follow the three nested loops:
 3. The inner product of the current column of the first argument with current column of the second argument,
 
 A more functional way would be to assemble a list of resulting inner product results in the middle loop,
-and then convert the list via `list->column` to the vector type on return,
-but this would have a performance impact compared to the mutating the current result column elements.
+and then convert the list via `list->column` (encapsuling `list->f64vector`) to the vector type on return,
+but this would have a significant performance impact compared to the mutating the current result column elements.
 
 All in all, for the **matrico** user this means when using matrix multiplication,
-prefer the use of `mx-dot*` as it is the fastest, directly using `matrix-dot*`;
+prefer the use of [`mx-dot*`](http://wiki.call-cc.org/eggref/5/matrico#matrix-multiplication) as it is the fastest, directly using `matrix-dot*`;
 `mx-dot` is slower as it needs to transpose the first argument before applying `mx-dot*`.
 
 Next, I will dissect the QR algorithm and **matrico**'s implementation of it.
