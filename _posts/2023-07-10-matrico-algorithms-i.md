@@ -7,6 +7,7 @@ tags: Lisp Scheme SchemeLang Chicken-Scheme matrico
 ## `matrico`'s Matrix Multiplication
 
 * Part I
+* [Part II](http://numerical-schemer.xyz/2023/08/21/matrico-algorithms-ii.html)
 
 ### Significance of Matrix Multiplication
 
