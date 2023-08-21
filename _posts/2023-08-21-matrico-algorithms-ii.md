@@ -1,6 +1,6 @@
 ---
 title: "Matrico Algorithms II"
-date: 2023-08-XX
+date: 2023-08-21
 tags: Lisp Scheme SchemeLang Chicken-Scheme matrico
 ---
 
