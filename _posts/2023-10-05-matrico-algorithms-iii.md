@@ -7,7 +7,7 @@ tags: Lisp Scheme SchemeLang Chicken-Scheme matrico
 ## `matrico`'s Differential Equation Solvers
 
 * [Part I](http://numerical-schemer.xyz/2023/07/10/matrico-algorithms-i.html)
-* [Part II](https://numerical-schemer.xyz/2023/08/21/matrico-algorithms-ii.html)
+* [Part II](http://numerical-schemer.xyz/2023/08/21/matrico-algorithms-ii.html)
 * Part III
 
 ### The Significance Differential Equations
@@ -154,7 +154,7 @@ The table of values used for the algorithm's coefficients are taken from "[Syste
     (time-stepper hyp sys tim x0)))
 ```
 For more information about this method, see the paper:
-"[One Step Integration Methods of Third-Fourth Order Accuracy with Large Hyperbolic Stability Limits](https://doi.org/10.1016/0378-4754(84)90056-9)"
+"[One Step Integration Methods of Third-Fourth Order Accuracy with Large Hyperbolic Stability Limits](https://doi.org/10.1016/0378-4754(84)90056-9)".
 
 Now interestingly, it looks like there is a pattern to these values,
 but I was not yet able to figure it out.
