@@ -8,6 +8,7 @@ tags: Lisp Scheme SchemeLang Chicken-Scheme matrico
 
 * [Part I](http://numerical-schemer.xyz/2023/07/10/matrico-algorithms-i.html)
 * Part II
+* [Part III](http://numerical-schemer.xyz/2023/10/05/matrico-algorithms-iii.html)
 
 ### The Significance of the QR Decomposition
 
